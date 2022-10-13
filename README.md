@@ -5,7 +5,7 @@ Aim to create login &amp; regist with Go
 
 This Backend Application is used for login & register in this application there are several features such as JWT, Validation email just for checking email type, Testing, Hasing password .etc
 
-I'am using UUID for user_id, don't forget to create extenxion in SQL console after creat the database with this query below :
+I'am using UUID for user_id, don't forget to create extenxion in SQL console after create the database with this query below :
 - CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 ## Several command you must know in this app :

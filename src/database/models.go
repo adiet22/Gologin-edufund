@@ -9,7 +9,7 @@ type User struct {
 	Role      string    `json:"role,omitempty"`
 	Password  string    `json:"Password,omitempty" validate:"required"`
 	Address   string    `json:"address,omitempty"`
-	Phone     int       `json:"phone,omitempty"`
+	Phone     string    `json:"phone,omitempty"`
 	CreatedAt time.Time `gorm:"default:now(); not null" json:"created_at"`
 	UpdatedAt time.Time `gorm:"default:now(); not null" json:"updated_at"`
 }

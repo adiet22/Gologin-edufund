@@ -84,11 +84,11 @@ _Response (201 - Created)_
 ```
 {
   "id": <id>,
-  "user_name": <your username>,
-  "email": <your email>,
-  "password": <your encrypted password>,
-  "address": <your address>,
-  "phone": <your phone>,
+  "user_name": <your username> (STRING),
+  "email": <your email> (STRING),
+  "password": <your encrypted password> (STRING),
+  "address": <your address> (STRING),
+  "phone": <your phone> (STRING),
   "updatedAt": <date>,
   "createdAt": <date>
 }
@@ -128,8 +128,8 @@ not needed
 _Request Body_
 ```
 {
-  "email": <your email>,
-  "password": <your password>
+  "email": <your email> (STRING),
+  "password": <your password> (STRING)
 }
 ```
 

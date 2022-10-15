@@ -11,7 +11,7 @@ func New(rt *mux.Router, db *gorm.DB) {
 	svc := NewService(repo)
 	ctrl := NewCtrl(svc)
 
-	route.HandleFunc("/", ctrl.SignIn).Methods("POST")
+	route.HandleFunc("/login", ctrl.SignIn).Methods("POST")
 	route.HandleFunc("/register", ctrl.Register).Methods("POST")
 
 }

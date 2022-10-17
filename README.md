@@ -22,7 +22,7 @@ go run . migrate -d //for rollback
 1. Clone the repository
 
 ```bash
-git clone git@github.com:adiet95/go-order-api.git
+git clone git@github.com:adiet95/Gologin-edufund.git
 ```
 
 2. Install dependencies
@@ -32,13 +32,13 @@ go get -u ./...
 # or
 go mod tidy
 ```
-3. Database Migration and Rollback
+
+3. Run the app
 
 ```bash
-go run main.go migrate --up //for database migration
-# or
-go run main.go migrate --down //for rollback
+go run . serve
 ```
+
 4. Add Env
 
 ```sh
@@ -49,10 +49,13 @@ go run main.go migrate --down //for rollback
   JWT_KEYS = Your JWT Key
   PORT = Your Port
 ```
-5. Run the app
+
+5. Database Migration and Rollback
 
 ```bash
-go run . serve
+go run main.go migrate --up //for database migration
+# or
+go run main.go migrate --down //for rollback
 ```
 
 ## 🔗 RESTful endpoints

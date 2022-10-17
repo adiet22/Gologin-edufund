@@ -42,7 +42,7 @@ go mod tidy
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```
 
-5. Add Env
+5. Create .env file
 
 ```sh
   DB_USER = Your DB User

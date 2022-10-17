@@ -1,0 +1,1 @@
+web: ./bin/gologin-edufund serve

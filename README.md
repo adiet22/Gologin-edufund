@@ -125,6 +125,48 @@ _Response (200 - Ok)_
 ```
 
 ## Alternate
+
+## Heroku
+### POST Register
+```
+https://gologin-edufund.herokuapp.com/register
+```
+> Create new user
+
+_Request Header_
+```
+not needed
+```
+
+_Request Body_
+```
+{
+  "user_name": <your username> (STRING),
+  "email": <your email> (STRING),
+  "password": <your password> (STRING),
+  "address": <your address> (STRING),
+  "phone": <your phone> (STRING)
+}
+```
+### POST Login
+```
+https://gologin-edufund.herokuapp.com/login
+```
+> Process Login
+
+_Request Header_
+```
+not needed
+```
+
+_Request Body_
+```
+{
+  "email": <your email> (STRING),
+  "password": <your password> (STRING)
+}
+```
+
 ### Docker HUB Repo
 ```
 https://hub.docker.com/repository/docker/adiet95/gologin-edufund

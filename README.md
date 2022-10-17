@@ -24,7 +24,7 @@ go run . migrate -d //for rollback
 github.com/adiet95/
 ```
 
-2. Clone the repository in Directory folder that has been created "github.com/adiet95/"
+2. Clone the repository inside Directory folder that has been created "github.com/adiet95/"
 ```bash
 git clone git@github.com:adiet95/Gologin-edufund.git
 ```
@@ -37,7 +37,10 @@ go get -u ./...
 go mod tidy
 ```
 
-4. Create New your PostgreSQL database
+4. Create New your PostgreSQL database and add extension for UUID in SQL console with this query below :
+```
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
 
 5. Add Env
 

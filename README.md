@@ -19,13 +19,17 @@ go run . migrate -d //for rollback
 
 ## 🛠️ Installation Steps
 
-1. Clone the repository
+1. Create Root Directory folder in Gopath 
+```
+github.com/adiet95/
+```
 
+2. Clone the repository in Directory folder that has been created "github.com/adiet95/"
 ```bash
 git clone git@github.com:adiet95/Gologin-edufund.git
 ```
 
-2. Install dependencies
+3. Install dependencies
 
 ```bash
 go get -u ./...
@@ -33,13 +37,9 @@ go get -u ./...
 go mod tidy
 ```
 
-3. Run the app
+4. Create New your PostgreSQL database
 
-```bash
-go run . serve
-```
-
-4. Add Env
+5. Add Env
 
 ```sh
   DB_USER = Your DB User
@@ -50,12 +50,17 @@ go run . serve
   PORT = Your Port
 ```
 
-5. Database Migration and Rollback
+6. Database Migration and Rollback
 
 ```bash
 go run main.go migrate --up //for database migration
 # or
 go run main.go migrate --down //for rollback
+```
+7. Run the app
+
+```bash
+go run . serve
 ```
 
 ## 🔗 RESTful endpoints
@@ -94,28 +99,6 @@ _Response (201 - Created)_
 }
 ```
 
-#### Error Response: ####
-_Response (400 - Bad Request)_
-```
-[
-  "message": <detail message>
-]
-```
-
-_Response (409 - conflict)_
-```
-{
-  "message": "Email Already registered!"
-}
-```
-
-_Response (500 - Internal Server Error)_
-```
-{
-  "message": "Internal Server Error"
-}
-```
-
 ### POST /login
 
 > Process Login
@@ -138,29 +121,6 @@ _Response (200 - Ok)_
 ```
 {
   "token": <your access token>
-}
-```
-
-#### Error Response: ####
-
-_Response (400 - Bad Request)_
-```
-[
-  "message": <detail message>
-]
-```
-
-_Response (404 - Not Found)_
-```
-{
-  "message": "user not registered!"
-}
-```
-
-_Response (500 - Internal Server Error)_
-```
-{
-  "message": "Internal Server Error"
 }
 ```
 

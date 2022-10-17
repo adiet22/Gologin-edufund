@@ -124,6 +124,16 @@ _Response (200 - Ok)_
 }
 ```
 
+## Alternate
+### Docker HUB Repo
+```
+https://hub.docker.com/repository/docker/adiet95/gologin-edufund
+```
+### Docker Pull Command
+```
+docker pull adiet95/gologin-edufund:v1
+```
+
 ## 💻 Built with
 
 - [Golang](https://go.dev/): Go Programming Language

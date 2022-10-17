@@ -66,6 +66,11 @@ go run main.go migrate --down //for rollback
 go run . serve
 ```
 
+## Testing Instruction With Postman
+1. Request Body, Insert with Body :
+- raw (Not form-urlencoded / form-data)
+2. Copy & Paste Template data request body / query params below.
+
 ## 🔗 RESTful endpoints
 ### POST /register
 

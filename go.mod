@@ -3,11 +3,14 @@ module github.com/adiet95/gologin-edufund
 go 1.18
 
 require (
+	github.com/cloudinary/cloudinary-go/v2 v2.2.0
 	github.com/go-gormigrate/gormigrate/v2 v2.0.2
 	github.com/golang-jwt/jwt v3.2.2+incompatible
-	github.com/gorilla/handlers v1.5.1
+	github.com/google/uuid v1.3.0
 	github.com/gorilla/mux v1.8.0
+	github.com/gorilla/schema v1.2.0
 	github.com/joho/godotenv v1.4.0
+	github.com/rs/cors v1.8.2
 	github.com/spf13/cobra v1.6.0
 	github.com/stretchr/testify v1.8.0
 	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a
@@ -16,8 +19,8 @@ require (
 )
 
 require (
+	github.com/creasty/defaults v1.5.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/felixge/httpsnoop v1.0.3 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgconn v1.13.0 // indirect

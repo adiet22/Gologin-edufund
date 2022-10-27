@@ -19,30 +19,23 @@ go run . migrate -d //for rollback
 
 ## 🛠️ Installation Steps
 
-1. Create Root Directory folder in Gopath 
-```
-github.com/adiet95/
-```
-
-2. Clone the repository inside Directory folder that has been created "github.com/adiet95/"
+1. Clone the repository
 ```bash
-git clone git@github.com:adiet95/Gologin-edufund.git
+https://github.com/adiet95/Gologin-edufund.git
 ```
 
-3. Install dependencies
+2. Install dependencies
 
 ```bash
-go get -u ./...
-# or
 go mod tidy
 ```
 
-4. Create New your PostgreSQL database and add extension for UUID in SQL console with this query below :
+3. Create New your PostgreSQL database and add extension for UUID in SQL console with this query below :
 ```
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```
 
-5. Create .env file
+4. Create .env file
 
 ```sh
   DB_USER = Your DB User
@@ -53,14 +46,14 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
   PORT = Your Port
 ```
 
-6. Database Migration and Rollback
+5. Database Migration and Rollback
 
 ```bash
 go run main.go migrate --up //for database migration
 # or
 go run main.go migrate --down //for rollback
 ```
-7. Run the app
+6. Run the app
 
 ```bash
 go run . serve

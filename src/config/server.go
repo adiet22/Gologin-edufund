@@ -2,12 +2,12 @@ package config
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/adiet95/gologin-edufund/src/routers"
-	"github.com/gorilla/handlers"
+	"github.com/rs/cors"
 	"github.com/spf13/cobra"
 )
 
@@ -17,21 +17,45 @@ var ServeCmd = &cobra.Command{
 	RunE:  server,
 }
 
+func corsHandler() *cors.Cors {
+	t := cors.New(cors.Options{
+		AllowedOrigins: []string{"*"},
+		AllowedMethods: []string{
+			http.MethodHead,
+			http.MethodGet,
+			http.MethodPost,
+			http.MethodPut,
+			http.MethodPatch,
+			http.MethodDelete,
+		},
+		AllowedHeaders:   []string{"*"},
+		AllowCredentials: false,
+	})
+	return t
+}
 func server(cmd *cobra.Command, args []string) error {
-	if mainRoute, err := routers.New(); err == nil {
-		var addrs string = "127.0.0.1:8080"
 
-		if pr := os.Getenv("PORT"); pr != "" {
-			addrs = "0.0.0.0:" + pr
+	if mainRoute, err := routers.New(); err == nil {
+
+		var addrs string = "0.0.0.0:8080"
+		if port := os.Getenv("PORT"); port != "" {
+			addrs = ":" + port
 		}
 
-		headersOk := handlers.AllowedHeaders([]string{"*"})
-		originsOk := handlers.AllowedOrigins([]string{"http://localhost:3000/"})
-		methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
+		corss := corsHandler()
 
-		fmt.Println("Gologin is running on PORT", addrs)
-		log.Fatal(http.ListenAndServe(addrs, handlers.CORS(originsOk, headersOk, methodsOk)(mainRoute)))
+		srv := &http.Server{
+			Addr:         addrs,
+			WriteTimeout: time.Second * 15,
+			ReadTimeout:  time.Second * 15,
+			IdleTimeout:  time.Minute,
+			Handler:      corss.Handler(mainRoute),
+		}
+
+		fmt.Println("Gorent Api is running on PORT", addrs, "success")
+		srv.ListenAndServe()
 		return nil
+
 	} else {
 		return err
 	}
